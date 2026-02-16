@@ -4,7 +4,7 @@ Resolve symbol addresses in remote macOS processes at runtime — without `task_
 
 rsym parses Mach-O metadata through the dyld shared cache and on-disk files to turn `(process, image, symbol)` into a live virtual address. It works against hardened runtime, SIP-protected, and system processes alike, and requires no special permissions on macOS.
 
-**Note:** rsym gives you addresses, not access. Reading data at these addresses still requires a task port — unless the image is in the shared cache, which is mapped identically in every process.
+**Note:** rsym gives you addresses, NOT access. Reading data at these addresses still requires a task port — unless the image is in the shared cache, which is mapped identically in every process. Even for cache images, reading access DOES NOT mean writing access outside of the host process.
 
 ## Build
 
